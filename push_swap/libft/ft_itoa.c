@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 19:43:20 by asalas-s          #+#    #+#             */
-/*   Updated: 2022/10/13 20:35:36 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/08 23:26:45 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,6 @@ static int	ft_number_len(int n)
 }
 
 /* ************************************************************************** */
-/* static int	ft_limits(int n, char *number, int len)                       */
-/*                                                                            */
-/* Determines if the number given as parameter is one of the cases that can   */
-/* cause problems when operating with it. The minimum negative integer value  */
-/* and zero. In both cases it operates on the string where the number is      */
-/* going to be stored, filling in the last value of the string.               */
-/* ************************************************************************** */
-
-static int	ft_limits(int n, char *number, int len)
-{
-	if ((n == -2147483648) || (n == 0))
-	{
-		number[len - 1] = (((n % 10) * -1) + '0');
-		return (1);
-	}
-	return (0);
-}
-
-/* ************************************************************************** */
 /* char	*ft_itoa(int n)                                                       */
 /*                                                                            */
 /* Returns the number of digits of the number passed as a parameter.          */
@@ -71,6 +52,7 @@ static int	ft_limits(int n, char *number, int len)
 char	*ft_itoa(int n)
 {
 	int		i;
+	int		digit;
 	char	*number;
 
 	i = ft_number_len(n);
@@ -78,19 +60,17 @@ char	*ft_itoa(int n)
 	if (number == NULL)
 		return (NULL);
 	number[i] = '\0';
-	if (ft_limits(n, number, i) == 1)
-	{
-		n = (n / 10);
-		i--;
-	}
+	i--;
 	if (n < 0)
-	{
 		number[0] = '-';
-		n = -n;
-	}
-	while (n > 0)
+	if (n == 0)
+		number[0] = '0';
+	while (n != 0)
 	{	
-		number[i - 1] = ((n % 10) + '0');
+		digit = n % 10;
+		if (digit < 0)
+			digit = -digit;
+		number[i] = (digit + '0');
 		n = (n / 10);
 		i--;
 	}
