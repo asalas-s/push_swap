@@ -6,13 +6,13 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:27:20 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/09 22:23:00 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/15 20:51:12 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_get_arg(int len, char **args)
+t_list	*ft_get_arg(int len, char **arguments)
 {
 	t_list	*stack;
 	t_list	*node;
@@ -21,7 +21,7 @@ t_list	*ft_get_arg(int len, char **args)
 	stack = NULL;
 	while (len > 1)
 	{
-		num = atoi(args[len - 1]);
+		num = atoi(arguments[len - 1]);
 		node = ft_lstnew(num);
 		if (node == NULL)
 			return (NULL);
@@ -63,16 +63,18 @@ int	ft_min_valor(t_list	*list)
 
 int	main(int argc, char **argv)
 {
-	t_list	*stack;
-	t_list	*list;
-	int		num;
-	int		min;
-	int		max;
-	int		media;
+	int		validate;
+//	t_list	*stack;
+//	t_list	*list;
+//	int		num;
+//	int		min;
+//	int		max;
 
 	if (argc > 1)
 	{
-		stack = ft_get_arg(argc, argv);
+		validate = ft_validate_imput(argc, argv);
+		printf("Entrada %d\n", validate);
+	/*	stack = ft_get_arg(argc, argv);
 		list = stack;
 		while (list)
 		{
@@ -83,9 +85,6 @@ int	main(int argc, char **argv)
 		min = ft_min_valor(stack);
 		max = ft_max_valor(stack);
 		printf("Minimo %d\n", min);
-		printf("Maximo %d\n", max);
-		media = max + min / 2;
-		printf("Media %d\n", media);
+		printf("Maximo %d\n", max); */
 	}
 }
-
