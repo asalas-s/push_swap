@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/15 21:57:19 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/20 21:54:14 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
 
-
 int			ft_number_format_ok(const char *str);
 int			ft_number_limits(const char *str);
-int			ft_validate_imput(int argc, char **argv);
+t_list		*ft_validate_imput(int argc, char **argv);
 
 int			ft_isdigit(int c);
 int			ft_isspace(int c);

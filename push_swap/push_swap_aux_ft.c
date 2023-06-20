@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 23:00:47 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/15 21:17:31 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/20 21:45:35 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,13 @@ long int	ft_atoli(const char *str)
 		i++;
 	}
 	return (num * signo);
+}
+
+void	ft_print_lst(t_list *lst)
+{
+	while (lst)
+	{
+		printf("%d\n", lst->content);
+		lst = lst->next;
+	}
 }

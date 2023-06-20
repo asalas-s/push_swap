@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 23:40:16 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/15 22:20:09 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/20 21:50:22 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,38 +39,70 @@ int	ft_number_limits(const char *str)
 	return (1);
 }
 
-int	ft_validate_imput(int argc, char **argv)
+t_list	*ft_insert_arg(t_list	*stack, char *argv)
 {
-	int	i;
-
-	i = 1;
-	while (i < argc)
-	{
-		if (!ft_number_format_ok(argv[i]))
-			return (0);
-		if (!ft_number_limits(argv[i]))
-			return (0);
-		i++;
-	}
-	i = 1;
-	return (1);
-}
-
-t_list	*ft_get_arg(int argc, char **argv)
-{
-	t_list	*stack;
 	t_list	*node;
 	int		num;
 
-	stack = NULL;
-	while (argc > 1)
-	{
-		num = atoi(argv[argc - 1]);
-		node = ft_lstnew(num);
-		if (node == NULL)
-			return (NULL);
-		ft_lstadd_front(&stack, node);
-		argc--;
-	}
+	num = atoi(argv);
+	node = ft_lstnew(num);
+	if (node == NULL)
+		return (NULL);
+	ft_lstadd_front(&stack, node);
 	return (stack);
+}
+
+int	ft_duplicate_numbers(t_list *stack)
+{
+	int		rep;
+	int		num;
+	t_list	*loop1;
+	t_list	*loop2;
+
+	rep = 0;
+	loop1 = stack;
+	loop2 = stack;
+	while (loop1)
+	{
+		num = loop1->content;
+		while (loop2)
+		{
+			if (num == loop2->content)
+				rep++;
+			loop2 = loop2->next;
+		}
+		if (rep > 1)
+			return (1);
+		rep = 0;
+		loop1 = loop1->next;
+		loop2 = stack;
+	}
+	return (0);
+}
+
+t_list	*ft_validate_imput(int argc, char **argv)
+{
+	int		i;
+	t_list	*stacka;
+
+	i = 1;
+	stacka = NULL;
+	while (i < argc)
+	{
+		if (!ft_number_format_ok(argv[i]))
+			return (NULL);
+		if (!ft_number_limits(argv[i]))
+			return (NULL);
+		i++;
+	}
+	i = 1;
+	while (i < argc)
+	{
+		stacka = ft_insert_arg(stacka, argv[i]);
+		i++;
+	}
+	if (ft_duplicate_numbers(stacka))
+		return (NULL);
+// HAY QUE LIBERAR STACK A SI HAY DUPLICADOS
+	return (stacka);
 }
