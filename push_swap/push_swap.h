@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/20 21:54:14 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/22 01:24:34 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,10 @@ int			ft_isdigit(int c);
 int			ft_isspace(int c);
 int			ft_atoi(const char *str);
 long int	ft_atoli(const char *str);
+
+void		ft_print_lst(t_list *lst);
+
+void		ft_swap(t_list **sstack, char stack);
+void		ft_push(t_list **stackorigin, t_list **stackdest, char stack);
 
 #endif

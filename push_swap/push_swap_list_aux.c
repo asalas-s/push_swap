@@ -45,9 +45,10 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst)
 {
-	del(lst->content);
+	free(lst->content);
+	free(lst->index);
 	free(lst);
 }
 

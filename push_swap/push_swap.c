@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:27:20 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/20 21:53:31 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/22 01:28:31 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	ft_min_valor(t_list	*list)
 int	main(int argc, char **argv)
 {
 	t_list	*stacka;
+	t_list	*stackb;
 
 	if (argc > 1)
 	{
@@ -53,5 +54,21 @@ int	main(int argc, char **argv)
 			printf("ENTRADA DE DATOS CORRECTA\n");
 		else
 			printf("Error\n");
+		ft_print_lst(stacka);
+		ft_swap(&stacka, 'a');
+		printf("SWAP\n");
+		ft_print_lst(stacka);
+		ft_push(&stacka, &stackb, 'b');
+		printf("PUSH\n");
+		printf("STACK A\n");
+		ft_print_lst(stacka);
+		printf("STACK B\n");
+		ft_print_lst(stackb);
+		ft_push(&stackb, &stacka, 'a');
+		printf("PUSH\n");
+		printf("STACK A\n");
+		ft_print_lst(stacka);
+		printf("STACK B\n");
+		ft_print_lst(stackb);
 	}
 }
