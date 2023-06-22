@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas <asalas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:27:20 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 02:56:23 by asalas           ###   ########.fr       */
+/*   Updated: 2023/06/22 23:24:39 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,25 +52,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		stacka = ft_validate_imput(argc, argv);
-		if (stacka != NULL)
-			printf("ENTRADA DE DATOS CORRECTA\n");
-		else
+		if (!stacka)
 			printf("Error\n");
-		ft_print_lst(stacka);
-		ft_swap(&stacka, 'a');
-		printf("SWAP\n");
-		ft_print_lst(stacka);
-		ft_push(&stacka, &stackb, 'b');
-		printf("PUSH\n");
-		printf("STACK A\n");
-		ft_print_lst(stacka);
-		printf("STACK B\n");
-		ft_print_lst(stackb);
-		ft_push(&stackb, &stacka, 'a');
-		printf("PUSH\n");
-		printf("STACK A\n");
-		ft_print_lst(stacka);
-		printf("STACK B\n");
-		ft_print_lst(stackb);
 	}
 }

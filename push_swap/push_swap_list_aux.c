@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_list_aux.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas <asalas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:39:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 02:44:46 by asalas           ###   ########.fr       */
+/*   Updated: 2023/06/22 23:33:08 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,27 @@ int	ft_lstvalueexits(t_list *lst, int dat)
 	}
 	return (0);
 }
+
+int	ft_lstlen(t_list *lst)
+{
+	int	len;
+
+	len = 0;
+	while (lst)
+	{
+		len++;
+		lst = lst->next;
+	}
+	return (len);
+}
+
+t_list	*ft_lstpos(t_list *lst, int index)
+{
+	while (index)
+	{
+		lst = lst->next;
+		index--;
+	}
+	return (lst);
+}
+

@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:39:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/14 23:33:16 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/22 23:27:28 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list	*ft_lstnew(int content)
 	if (new == NULL)
 		return (NULL);
 	new->content = content;
+	new->index = 0;
 	new->next = NULL;
 	return (new);
 }
