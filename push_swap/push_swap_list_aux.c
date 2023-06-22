@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_list_aux.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: asalas <asalas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:39:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/20 20:24:47 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/22 02:44:46 by asalas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+/*t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*clonnode;
 	t_list	*clonlst;
@@ -43,16 +43,14 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		f(lst->content);
 		lst = lst->next;
 	}
-}
+}*/
 
 void	ft_lstdelone(t_list *lst)
 {
-	free(lst->content);
-	free(lst->index);
 	free(lst);
 }
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst)
 {
 	t_list	*firstnode;
 	t_list	*delnode;
@@ -63,7 +61,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		delnode = firstnode;
 		firstnode = firstnode->next;
-		ft_lstdelone(delnode, del);
+		ft_lstdelone(delnode);
 	}
 	*lst = NULL;
 }

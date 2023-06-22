@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_inputcontrol.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: asalas <asalas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 23:40:16 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 00:55:38 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/22 02:42:13 by asalas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,9 @@ t_list	*ft_validate_imput(int argc, char **argv)
 		i++;
 	}
 	if (ft_duplicate_numbers(stacka))
+	{
+		ft_lstclear(&stacka);
 		return (NULL);
-// HAY QUE LIBERAR STACK A SI HAY DUPLICADOS
+	}
 	return (stacka);
 }

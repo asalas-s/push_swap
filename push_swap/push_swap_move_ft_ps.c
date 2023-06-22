@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_move_ft_ps.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: asalas <asalas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 23:00:57 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 01:25:30 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/22 02:58:36 by asalas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,15 @@ void	ft_push(t_list **stackorigin, t_list **stackdest, char stack)
 {
 	t_list	*push;
 
-	push = (*stackorigin)->next;
-	(*stackorigin)->next = (*stackdest);
-	(*stackdest) = (*stackorigin);
-	(*stackorigin) = push;
-	if (stack == 'a')
-		push = NULL;
-	else
-		push = NULL;
+	if ((*stackorigin) != NULL)
+	{
+		push = (*stackorigin)->next;
+		(*stackorigin)->next = (*stackdest);
+		(*stackdest) = (*stackorigin);
+		(*stackorigin) = push;
+		if (stack == 'a')
+			push = NULL;
+		else
+			push = NULL;
+	}
 }

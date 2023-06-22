@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: asalas <asalas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:27:20 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 01:28:31 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/22 02:56:23 by asalas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int	main(int argc, char **argv)
 	t_list	*stacka;
 	t_list	*stackb;
 
+	stacka = NULL;
+	stackb = NULL;
 	if (argc > 1)
 	{
 		stacka = ft_validate_imput(argc, argv);
