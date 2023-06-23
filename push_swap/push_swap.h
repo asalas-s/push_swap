@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: novasol <novasol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 22:48:55 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/23 13:19:35 by novasol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ long int	ft_atoli(const char *str);
 void		ft_print_lst(t_list *lst);
 int			ft_lstlen(t_list *lst);
 t_list		*ft_lstpos(t_list *lst, int index);
+int			ft_isinorder(t_list *lst);
 
 void		ft_swap(t_list **sstack, char stack);
 void		ft_push(t_list **stackorigin, t_list **stackdest, char stack);

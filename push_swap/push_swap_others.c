@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_others.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: novasol <novasol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 23:31:54 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 23:32:44 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/23 13:26:31 by novasol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,18 @@ void	ft_lstindex(t_list *lst)
 		lst = lst->next;
 		index++;
 	}
+}
+
+int	ft_isinorder(t_list *lst)
+{
+	while (lst)
+	{
+		if (lst->next)
+		{
+			if (((lst->next)->content) < (lst->content))
+				return (0);
+		}
+		lst = lst->next;
+	}
+	return (1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: novasol <novasol@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:27:20 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 23:24:39 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/23 13:27:17 by novasol          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,13 @@ int	main(int argc, char **argv)
 
 	stacka = NULL;
 	stackb = NULL;
+	(void)stackb;
 	if (argc > 1)
 	{
 		stacka = ft_validate_imput(argc, argv);
 		if (!stacka)
 			printf("Error\n");
+		if (!ft_isinorder(stacka))
+			printf("HAY QUE ORDENAR\n");
 	}
 }
