@@ -6,51 +6,43 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 23:00:57 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 23:34:02 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/25 18:52:22 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_list **stackorigin, char stack)
+void	ft_swap(t_list **sorigin)
 {
-	int	swap;
-	int	len;
+	int		swap;
+	int		len;
 
-	len = ft_lstlen((*stackorigin));
+	len = ft_lstlen((*sorigin));
 	if (len >= 2)
 	{
-		swap = (*stackorigin)->content;
-		(*stackorigin)->content = (*stackorigin)->next->content;
-		(*stackorigin)->next->content = swap;
-		if (stack == 'a')
-			swap = 0;
-		else
-			swap = 1;
+		swap = (*sorigin)->content;
+		(*sorigin)->content = (*sorigin)->next->content;
+		(*sorigin)->next->content = swap;
 	}
 }
 
-void	ft_ss(t_list **stackorigin, t_list **stackdest)
+void	ft_ss(t_list **stacka, t_list **stackb)
 {
-	ft_swap(stackorigin, 's');
-	ft_swap(stackdest, 's');
+	ft_swap(stacka);
+	ft_swap(stackb);
 }
 
-void	ft_push(t_list **stackorigin, t_list **stackdest, char stack)
+void	ft_push(t_list **sorigin, t_list **sdest)
 {
 	t_list	*node;
 	t_list	*start;
 
-	if ((*stackorigin))
+	if ((*sorigin))
 	{
-		node = (*stackorigin);
-		start = (*stackorigin)->next;
+		node = (*sorigin);
+		start = (*sorigin)->next;
 		node->next = NULL;
-		(*stackorigin) = start;
-		ft_lstadd_front(stackdest, node);
-		if (stack == 'a')
-			node = NULL;
-		else
-			node = NULL;
+		(*sorigin) = start;
+		ft_lstadd_front(sdest, node);
 	}
 }

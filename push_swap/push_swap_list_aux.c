@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:39:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 23:33:08 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/25 17:06:40 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,3 @@ t_list	*ft_lstpos(t_list *lst, int index)
 	}
 	return (lst);
 }
-

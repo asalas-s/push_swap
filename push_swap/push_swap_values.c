@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_values.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 17:27:20 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/25 19:10:43 by asalas-s         ###   ########.fr       */
+/*   Created: 2023/06/25 19:02:56 by asalas-s          #+#    #+#             */
+/*   Updated: 2023/06/25 19:03:25 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	ft_max_valor(t_list	*list)
 {
-	t_list	*stacka;
-	t_list	*stackb;
+	int	max;
 
-	stacka = NULL;
-	stackb = NULL;
-
-	if (argc > 1)
+	if (list)
+		max = list->content;
+	while (list)
 	{
-		stacka = ft_validate_imput(argc, argv);
-		if (!stacka)
-			printf("Error\n");
-		if (!ft_isinorder(stacka))
-			printf("HAY QUE ORDENAR\n");
-		ft_lstclear(stacka);
+		if ((list->content) >= max)
+			max = list->content;
+		list = list->next;
 	}
+	return (max);
+}
+
+int	ft_min_valor(t_list	*list)
+{
+	int	min;
+
+	if (list)
+		min = list->content;
+	while (list)
+	{
+		if ((list->content) <= min)
+			min = list->content;
+		list = list->next;
+	}
+	return (min);
 }

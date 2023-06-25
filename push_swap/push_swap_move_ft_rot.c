@@ -6,61 +6,53 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 23:05:58 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/22 23:10:39 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/25 18:40:52 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate(t_list **stackorigin, char stack)
+void	ft_rotate(t_list **sorigin)
 {
 	t_list	*node;
 	t_list	*nodepost;
 	int		len;
 
-	len = ft_lstlen((*stackorigin));
+	len = ft_lstlen((*sorigin));
 	if (len >= 2)
 	{
-		node = (*stackorigin);
-		nodepost = (*stackorigin)->next;
+		node = (*sorigin);
+		nodepost = (*sorigin)->next;
 		node->next = NULL;
-		(*stackorigin) = nodepost;
-		ft_lstadd_back(stackorigin, node);
-		if (stack == 'a')
-			node = NULL;
-		else
-			node = NULL;
+		(*sorigin) = nodepost;
+		ft_lstadd_back(sorigin, node);
 	}
 }
 
-void	ft_rrotate(t_list **stackorigin, char stack)
+void	ft_rrotate(t_list **sorigin)
 {
 	t_list	*node;
 	t_list	*nodeprev;
 	int		len;
 
-	len = ft_lstlen((*stackorigin));
+	len = ft_lstlen((*sorigin));
 	if (len >= 2)
 	{
-		node = ft_lstpos((*stackorigin), len -1);
-		nodeprev = ft_lstpos((*stackorigin), len -2);
+		node = ft_lstpos((*sorigin), len -1);
+		nodeprev = ft_lstpos((*sorigin), len -2);
 		nodeprev->next = NULL;
-		ft_lstadd_front(stackorigin, node);
-		if (stack == 'a')
-			node = NULL;
-		else
-			node = NULL;
+		ft_lstadd_front(sorigin, node);
 	}
 }
 
-void	ft_rr(t_list **stackorigin, t_list **stackdest)
+void	ft_rr(t_list **stacka, t_list **stackb)
 {
-	ft_rotate(stackorigin, 'r');
-	ft_rotate(stackdest, 'r');
+	ft_rotate(stacka);
+	ft_rotate(stackb);
 }
 
-void	ft_rrr(t_list **stackorigin, t_list **stackdest)
+void	ft_rrr(t_list **stacka, t_list **stackb)
 {
-	ft_rrotate(stackorigin, 'r');
-	ft_rrotate(stackdest, 'r');
+	ft_rrotate(stacka);
+	ft_rrotate(stackb);
 }
