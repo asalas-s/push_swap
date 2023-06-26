@@ -3,23 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_others.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: novasol <novasol@student.42.fr>            +#+  +:+       +#+        */
+/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 23:31:54 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/23 13:26:31 by novasol          ###   ########.fr       */
+/*   Updated: 2023/06/26 22:44:27 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_print_lst(t_list *lst)
-{
-	while (lst)
-	{
-		printf("%d\n", lst->content);
-		lst = lst->next;
-	}
-}
 
 void	ft_lstindex(t_list *lst)
 {
@@ -46,4 +37,31 @@ int	ft_isinorder(t_list *lst)
 		lst = lst->next;
 	}
 	return (1);
+}
+
+char	*ft_parser(int order)
+{
+	if (order == 1)
+		return ("sa");
+	if (order == 2)
+		return ("sb");
+	if (order == 3)
+		return ("ss");
+	if (order == 4)
+		return ("pa");
+	if (order == 5)
+		return ("pb");
+	if (order == 6)
+		return ("ra");
+	if (order == 7)
+		return ("rb");
+	if (order == 8)
+		return ("rr");
+	if (order == 9)
+		return ("rra");
+	if (order == 10)
+		return ("rrb");
+	if (order == 11)
+		return ("rrr");
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/25 18:44:45 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/26 22:44:46 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@ int			ft_lstlen(t_list *lst);
 t_list		*ft_lstpos(t_list *lst, int index);
 int			ft_isinorder(t_list *lst);
 
+void		ft_putchar(char c);
+void		ft_putstr(char	*str);
+
 void		ft_swap(t_list **sorigin);
 void		ft_push(t_list **sorigin, t_list **sdest);
 void		ft_ss(t_list **stacka, t_list **stackb);
@@ -68,5 +71,7 @@ void		ft_rotate(t_list **sorigin);
 void		ft_rr(t_list **stacka, t_list **stackb);
 void		ft_rrotate(t_list **sorigin);
 void		ft_rrr(t_list **stacka, t_list **stackb);
+
+char		*ft_parser(int order);
 
 #endif

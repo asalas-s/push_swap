@@ -6,13 +6,13 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:15:07 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/25 19:15:46 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/26 22:40:34 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_olist	*ft_lstnew(int code)
+t_olist	*ft_orderlstnew(int code)
 {
 	t_olist	*new;
 
@@ -42,7 +42,7 @@ void	ft_orderlstadd_back(t_olist **olst, t_olist *onew)
 		*olst = onew;
 	else
 	{
-		last = ft_ordelstlast(*olst);
+		last = ft_orderlstlast(*olst);
 		last->next = onew;
 	}
 }

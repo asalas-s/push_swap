@@ -6,44 +6,11 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:39:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/25 17:06:40 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/26 22:22:15 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*clonnode;
-	t_list	*clonlst;
-	void	*ptr;
-
-	clonnode = NULL;
-	clonlst = NULL;
-	while (lst != NULL)
-	{
-		ptr = f(lst->content);
-		clonnode = ft_lstnew(ptr);
-		if (clonnode == NULL)
-		{
-			del(ptr);
-			ft_lstclear(&clonlst, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&clonlst, clonnode);
-		lst = lst->next;
-	}
-	return (clonlst);
-}
-
-void	ft_lstiter(t_list *lst, void (*f)(void *))
-{
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
-}*/
 
 void	ft_lstdelone(t_list *lst)
 {

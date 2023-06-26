@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 19:16:09 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/25 19:31:53 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/26 22:44:39 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,32 +63,4 @@ void	ft_print_lst(t_list *lst)
 		ft_putchar('\n');
 		lst = lst->next;
 	}
-}
-
-char	*ft_parser(int order)
-{
-	if (order == 0)
-		return (NULL);
-	if (order == 1)
-		return ("sa");
-	if (order == 2)
-		return ("sb");
-	if (order == 3)
-		return ("ss");
-	if (order == 4)
-		return ("pa");
-	if (order == 5)
-		return ("pb");
-	if (order == 6)
-		return ("ra");
-	if (order == 7)
-		return ("rb");
-	if (order == 8)
-		return ("rr");
-	if (order == 9)
-		return ("rra");
-	if (order == 10)
-		return ("rrb");
-	if (order == 11)
-		return ("rrr");
 }
