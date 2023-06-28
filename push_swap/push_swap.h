@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/26 22:44:46 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/28 21:46:24 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,20 @@ int			ft_isinorder(t_list *lst);
 void		ft_putchar(char c);
 void		ft_putstr(char	*str);
 
-void		ft_swap(t_list **sorigin);
-void		ft_push(t_list **sorigin, t_list **sdest);
-void		ft_ss(t_list **stacka, t_list **stackb);
-void		ft_rotate(t_list **sorigin);
-void		ft_rr(t_list **stacka, t_list **stackb);
-void		ft_rrotate(t_list **sorigin);
-void		ft_rrr(t_list **stacka, t_list **stackb);
+void		swap(t_list **sorigin);
+void		push(t_list **sorigin, t_list **sdest);
+void		rotate(t_list **sorigin);
+void		rrotate(t_list **sorigin);
+
+
+void		ft_swap(t_list **stack, t_olist **olst, char s);
+void		ft_push(t_list **stacka, t_list **stackb, t_olist **olst, char s);
+void		ft_rotate(t_list **stack, t_olist **olst, char s);
+void		ft_rrotate(t_list **stack, t_olist **olst, char s);
+
+void		ft_ss(t_list **stacka, t_list **stackb, t_olist **olst);
+void		ft_rr(t_list **stacka, t_list **stackb, t_olist **olst);
+void		ft_rrr(t_list **stacka, t_list **stackb, t_olist **olst);
 
 char		*ft_parser(int order);
 
