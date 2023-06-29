@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:27:20 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/26 22:46:02 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/30 01:32:30 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,18 @@ int	main(int argc, char **argv)
 		if (!stacka)
 			ft_putstr("Error\n");
 		if (!ft_isinorder(stacka))
+		{
 			ft_putstr("HAY QUE ORDENAR\n");
+			ft_lstindex(stacka);
+			ft_orderstack(&stacka, &stackb, &olst);
+		}
+		else
+		{
+			ft_putstr("ESTA ORDENADA\n");
+		}
+		ft_print_lst(stacka);
+		ft_orderlstclear(&olst);
 		ft_lstclear(&stacka);
+		ft_lstclear(&stackb);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 19:16:09 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/26 22:44:39 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/30 01:32:35 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	ft_print_lst(t_list *lst)
 	while (lst)
 	{
 		ft_putnbr(lst->content);
+		ft_putchar('|');
+		ft_putnbr(lst->index);
 		ft_putchar('\n');
 		lst = lst->next;
 	}

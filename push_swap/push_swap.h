@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/28 21:46:24 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/30 01:32:24 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void		ft_orderlstadd_back(t_olist **olst, t_olist *onew);
 void		ft_orderlstdelone(t_olist *olst);
 void		ft_orderlstclear(t_olist **olst);
 
+void		ft_print_olst(t_olist *olst);
+
 int			ft_number_format_ok(const char *str);
 int			ft_number_limits(const char *str);
 t_list		*ft_validate_imput(int argc, char **argv);
@@ -70,15 +72,27 @@ void		rotate(t_list **sorigin);
 void		rrotate(t_list **sorigin);
 
 
-void		ft_swap(t_list **stack, t_olist **olst, char s);
-void		ft_push(t_list **stacka, t_list **stackb, t_olist **olst, char s);
-void		ft_rotate(t_list **stack, t_olist **olst, char s);
-void		ft_rrotate(t_list **stack, t_olist **olst, char s);
+void		ft_swapa(t_list **stack, t_olist **olst);
+void		ft_swapb(t_list **stack, t_olist **olst);
+void		ft_pusha(t_list **stacka, t_list **stackb, t_olist **olst);
+void		ft_pushb(t_list **stacka, t_list **stackb, t_olist **olst);
+void		ft_rotatea(t_list **stack, t_olist **olst);
+void		ft_rotateb(t_list **stack, t_olist **olst);
+void		ft_rrotatea(t_list **stack, t_olist **olst);
+void		ft_rrotateb(t_list **stack, t_olist **olst);
 
 void		ft_ss(t_list **stacka, t_list **stackb, t_olist **olst);
 void		ft_rr(t_list **stacka, t_list **stackb, t_olist **olst);
 void		ft_rrr(t_list **stacka, t_list **stackb, t_olist **olst);
 
 char		*ft_parser(int order);
+void		ft_lstindex(t_list *lst);
+
+void		ft_orderstack(t_list **stacka, t_list **stackb, t_olist **olst);
+void		ft_order_2(t_list **stacka, t_list **stackb, t_olist **olst);
+void		ft_order_3(t_list **stacka, t_list **stackb, t_olist **olst);
+
+int			ft_max_value(t_list	*list);
+int			ft_min_value(t_list	*list);
 
 #endif
