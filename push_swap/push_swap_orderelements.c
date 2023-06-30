@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_orderelements.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: asalas <asalas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 22:52:45 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/30 01:32:46 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/06/30 05:17:22 by asalas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_orderstack(t_list **stacka, t_list **stackb, t_olist **olst)
 		ft_order_2(stacka, stackb, olst);
 	else if (stacklen == 3)
 		ft_order_3(stacka, stackb, olst);
+	else if (stacklen == 4)
+		ft_order_4(stacka, stackb, olst);
 	ft_print_olst(*olst);
 }
 
@@ -58,19 +60,47 @@ void	ft_order_3(t_list **stacka, t_list **stackb, t_olist **olst)
 
 void	ft_order_4(t_list **stacka, t_list **stackb, t_olist **olst)
 {
-	int	max;
 	int	min;
 
-	max = ft_max_value(*stacka);
 	min = ft_min_value(*stacka);
-	if ((max == 0) || (min == 0) || (max == 3) || (min == 3))
+	if (min == 1)
+		ft_swapa(stacka, olst);
+	else if (min == 2)
 	{
-		if ((max == 3) || (min == 3))
-			ft_rrotatea(stacka, olst);
-		ft_pushb(stacka, stackb, olst);
-		ft_order_3(stacka, stackb, olst);
-		ft_pusha(stacka, stackb, olst);
-		if ((max == 0) || (min == 0))
-			ft_rotatea(stacka, olst);
+		ft_rrotatea(stacka, olst);
+		ft_rrotatea(stacka, olst);
 	}
+	else if (min == 3)
+		ft_rrotatea(stacka, olst);
+	ft_pushb(stacka, stackb, olst);
+	ft_order_3(stacka, stackb, olst);
+	ft_pusha(stacka, stackb, olst);
+}
+
+void	ft_order_5(t_list **stacka, t_list **stackb, t_olist **olst)
+{
+	int	min;
+
+	min = ft_min_value(*stacka);
+	if (min == 1)
+	{
+		ft_swapa(stacka, olst);
+	}
+	else if (min == 2)
+	{
+		ft_rotatea(stacka, olst);
+		ft_rotatea(stacka, olst);
+	}
+	else if (min == 3)
+	{
+		ft_rrotatea(stacka, olst);
+		ft_rrotatea(stacka, olst);
+	}
+	else if (min == 4)
+	{
+		ft_rrotatea(stacka, olst);
+	}
+	ft_pushb(stacka, stackb, olst);
+	ft_order_4(stacka, stackb, olst);
+	ft_pusha(stacka, stackb, olst);
 }
