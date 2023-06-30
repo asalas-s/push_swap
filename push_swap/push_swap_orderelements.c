@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_orderelements.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas <asalas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 22:52:45 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/30 05:17:22 by asalas           ###   ########.fr       */
+/*   Updated: 2023/06/30 21:53:44 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ void	ft_orderstack(t_list **stacka, t_list **stackb, t_olist **olst)
 		ft_order_3(stacka, stackb, olst);
 	else if (stacklen == 4)
 		ft_order_4(stacka, stackb, olst);
+	else if (stacklen == 5)
+		ft_order_5(stacka, stackb, olst);
+	else
+		ft_order_more(stacka, stackb, olst);
 	ft_print_olst(*olst);
 }
 

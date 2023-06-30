@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asalas <asalas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/30 04:06:26 by asalas           ###   ########.fr       */
+/*   Updated: 2023/06/30 21:53:51 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ void		ft_orderstack(t_list **stacka, t_list **stackb, t_olist **olst);
 void		ft_order_2(t_list **stacka, t_list **stackb, t_olist **olst);
 void		ft_order_3(t_list **stacka, t_list **stackb, t_olist **olst);
 void		ft_order_4(t_list **stacka, t_list **stackb, t_olist **olst);
+void		ft_order_5(t_list **stacka, t_list **stackb, t_olist **olst);
+void		ft_order_more(t_list **stacka, t_list **stackb, t_olist **olst);
 
 int			ft_max_value(t_list	*list);
 int			ft_min_value(t_list	*list);
