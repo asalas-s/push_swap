@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/30 21:53:51 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/01 18:12:05 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 typedef struct s_list
 {
 	int				content;
+	int				position;
 	int				index;
+	int				check;
 	struct s_list	*next;
 }	t_list;
 
@@ -70,7 +72,6 @@ void		swap(t_list **sorigin);
 void		push(t_list **sorigin, t_list **sdest);
 void		rotate(t_list **sorigin);
 void		rrotate(t_list **sorigin);
-
 
 void		ft_swapa(t_list **stack, t_olist **olst);
 void		ft_swapb(t_list **stack, t_olist **olst);
