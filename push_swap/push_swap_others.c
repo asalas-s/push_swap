@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 23:31:54 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/07/01 18:42:35 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/14 00:27:40 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,6 @@ void	ft_lstindex(t_list *lst)
 		index++;
 	}
 }
-
-/*void	ft_lstpositions(t_list *lst)
-{
-	int	position;
-	int	len;
-	int min;
-	t_list *start;
-
-	start = lst;
-	position = 0;
-	len = ft_lstlen(lst);
-	while (position < len)
-	{
-		min = ft_min_value(lst);
-		while ((lst->content != min) && (lst->check == 0))
-			lst = lst->next;
-		lst->position = position;
-		lst->check = 1;
-		position++;
-
-	}
-}*/
 
 int	ft_isinorder(t_list *lst)
 {

@@ -6,22 +6,22 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 19:16:09 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/07/01 18:03:44 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:48:49 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, int fd)
 {
-	write(1, &c, 1);
+	write(fd, &c, 1);
 }
 
-void	ft_putstr(char	*str)
+void	ft_putstr(char	*str, int fd)
 {
 	while (*str != '\0')
 	{
-		ft_putchar(*str);
+		ft_putchar(*str, fd);
 		str++;
 	}
 }
@@ -38,19 +38,19 @@ void	ft_putnbr(int n)
 	else
 	{
 		if (r < 0)
-			ft_putchar('-');
+			ft_putchar('-', 1);
 	}	
 	if (r < 0)
 		r = -r;
-	ft_putchar(r + '0');
+	ft_putchar(r + '0', 1);
 }
 
 void	ft_print_olst(t_olist *olst)
 {
 	while (olst)
 	{
-		ft_putstr(ft_parser(olst->code));
-		ft_putchar('\n');
+		ft_putstr(ft_parser(olst->code), 1);
+		ft_putchar('\n', 1);
 		olst = olst->next;
 	}
 }
@@ -60,9 +60,9 @@ void	ft_print_lst(t_list *lst)
 	while (lst)
 	{
 		ft_putnbr(lst->content);
-		ft_putchar('|');
+		ft_putchar('|', 1);
 		ft_putnbr(lst->index);
-		ft_putchar('\n');
+		ft_putchar('\n', 1);
 		lst = lst->next;
 	}
 }

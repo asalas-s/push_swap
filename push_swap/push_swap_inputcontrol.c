@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 23:40:16 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/30 01:32:57 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:43:32 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,18 @@
 int	ft_number_format_ok(const char *str)
 {
 	int		i;
+	int		empty;
 
 	i = 0;
+	empty = 0;
 	while (ft_isspace(str[i]))
 			i++;
 	if ((str[i] == '+') || (str[i] == '-'))
 		i++;
+	empty = i;
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
-	if (str[i] == '\0')
+	if ((str[i] == '\0') && (i != empty))
 		return (1);
 	else
 		return (0);

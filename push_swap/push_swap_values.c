@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 19:02:56 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/30 01:32:33 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/14 00:27:50 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ int	ft_max_value(t_list	*list)
 	int	index;
 
 	if (list)
+	{
 		max = list->content;
 		index = list->index;
+	}
 	while (list)
 	{
 		if ((list->content) > max)
@@ -38,8 +40,10 @@ int	ft_min_value(t_list	*list)
 	int	index;
 
 	if (list)
+	{
 		min = list->content;
 		index = list->index;
+	}
 	while (list)
 	{
 		if ((list->content) < min)
