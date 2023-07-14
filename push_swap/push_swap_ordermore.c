@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 22:52:45 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/06/30 22:03:49 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/14 23:55:51 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,30 @@
 void	ft_order_more(t_list **stacka, t_list **stackb, t_olist **olst)
 {
 	int	min;
+	int	len;
 
+	len = ft_lstlen(*stacka);
 	min = ft_min_value(*stacka);
-	if (min == 1)
+	while (len > 0)
 	{
-		ft_swapa(stacka, olst);
+		if (min == 0)
+			ft_pushb(stacka, stackb, olst);
+		if (min == len)
+		{
+			ft_rrotatea(stacka, olst);
+			ft_pushb(stacka, stackb, olst);
+		}
+		if ((min > len / 2) && (min != len))
+			ft_rrotatea(stacka, olst);
+		if ((min <= len / 2) && (min != 0))
+			ft_rotatea(stacka, olst);
+		len = ft_lstlen(*stacka);
+		min = ft_min_value(*stacka);
 	}
-	else if (min == 2)
+	len = ft_lstlen(*stackb);
+	while (len > 0)
 	{
-		ft_rotatea(stacka, olst);
-		ft_rotatea(stacka, olst);
+		ft_pusha(stacka, stackb, olst);
+		len = ft_lstlen(*stackb);
 	}
-	else if (min == 3)
-	{
-		ft_rrotatea(stacka, olst);
-		ft_rrotatea(stacka, olst);
-	}
-	else if (min == 4)
-	{
-		ft_rrotatea(stacka, olst);
-	}
-	ft_pushb(stacka, stackb, olst);
-	ft_order_4(stacka, stackb, olst);
-	ft_pusha(stacka, stackb, olst);
 }

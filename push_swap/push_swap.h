@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/07/13 22:49:57 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/14 21:49:31 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 typedef struct s_list
 {
 	int				content;
-	int				position;
+	int				ordinal;
 	int				index;
 	int				check;
 	struct s_list	*next;
