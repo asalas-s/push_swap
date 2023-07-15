@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:27:20 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/07/13 22:50:29 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/15 21:46:08 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int	main(int argc, char **argv)
 		stacka = ft_validate_imput(argc, argv);
 		if (!stacka)
 			ft_putstr("Error\n", 2);
+		ft_lstindex(stacka);
+		ft_lstordinal_init(stacka);
+		ft_lstordinal_calc(stacka);
 		if (!ft_isinorder(stacka))
 		{
 			ft_lstindex(stacka);

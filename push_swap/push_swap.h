@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:34:05 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/07/14 21:49:31 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/15 21:47:18 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_list
 	int				content;
 	int				ordinal;
 	int				index;
-	int				check;
 	struct s_list	*next;
 }	t_list;
 
@@ -98,5 +97,8 @@ void		ft_order_more(t_list **stacka, t_list **stackb, t_olist **olst);
 
 int			ft_max_value(t_list	*list);
 int			ft_min_value(t_list	*list);
+
+void		ft_lstordinal_calc(t_list *lst);
+void		ft_lstordinal_init(t_list *lst);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 23:31:54 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/07/14 21:49:17 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/15 21:47:09 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,43 @@ void	ft_lstindex(t_list *lst)
 		lst->index = index;
 		lst = lst->next;
 		index++;
+	}
+}
+
+void	ft_lstordinal_init(t_list *lst)
+{
+	while (lst)
+	{
+		lst->ordinal = -1;
+		lst = lst->next;
+	}
+}
+
+void	ft_lstordinal_calc(t_list *lst)
+{
+	int		ordinal;
+	int		min;
+	t_list	*base;
+
+	base = lst;
+	ordinal = 0;
+	while (ordinal < ft_lstlen(lst))
+	{
+		while ((base->ordinal) != -1)
+			base = base->next;
+		min = base->content;
+		while (base)
+		{
+			if (((base->content) < min) && ((base->ordinal) == -1))
+				min = base->content;
+			base = base->next;
+		}
+		base = lst;
+		while ((base->content) != min)
+			base = base->next;
+		(base->ordinal) = ordinal;
+		ordinal++;
+		base = lst;
 	}
 }
 

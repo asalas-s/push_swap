@@ -6,7 +6,7 @@
 /*   By: asalas-s <asalas-s@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 19:16:09 by asalas-s          #+#    #+#             */
-/*   Updated: 2023/07/13 22:48:49 by asalas-s         ###   ########.fr       */
+/*   Updated: 2023/07/15 21:32:00 by asalas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,11 @@ void	ft_print_lst(t_list *lst)
 	{
 		ft_putnbr(lst->content);
 		ft_putchar('|', 1);
+		ft_putnbr(lst->ordinal);
+		ft_putchar('|', 1);
 		ft_putnbr(lst->index);
+		ft_putchar('|', 1);
+		ft_putnbr(lst->prize);
 		ft_putchar('\n', 1);
 		lst = lst->next;
 	}
